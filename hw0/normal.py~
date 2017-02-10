@@ -1,0 +1,5 @@
+from numpy import *
+
+for i in range(11):
+    print(random.normal(0, 1))
+
