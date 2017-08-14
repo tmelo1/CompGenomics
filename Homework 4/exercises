@@ -1,0 +1,32 @@
+Exercise 1:
+
+	1. Individual 3 is the only unambiguous individual.
+
+	2. Individual 3 haplotype: 0 1 0 0 0
+
+	3. Individual 1: 
+	   Individual 2:
+	   Individual 4:
+	   Individual 5:
+
+Problem 3:
+	1. p(G1 = 0.5, G2 = 1, G3 = 0, G4 = -1, G5 = 2) = P(G1 | G2, G3, G4, G5)P(G1)
+													= P(G1)P(G2, G3, G4, G5)P(G1)
+													= P(G2 | G3, G4, G5)P(G1)P(G1)
+													= P(G2)P(G3, G4, G5)P(G1)P(G1)
+													= P(G2)P(G3 | G4, G5)P(G1)P(G1)
+													= P(G2)P(G3)P(G4, G5)P(G1)P(G1)
+													= P(G2)P(G3)P(G5 | G4)P(G4)P(G1)P(G1)
+													= P(G2)P(G3 | G1, G2)P(G5 | G4, G3)P(G1)
+													  P(G4 | G2)
+													= P(G2 = 1)P(G3 = 0 | G1 = 0.5, G2 = 1)
+													  P(G5 = 2 | G4 = -1, G3 = 0)P(G1 = 0.5)
+													= N(1; 0, 1)N(0; 1, 1)N(-1; 2.5, 2)
+													  N(2; -1, 1)N(0.5; 0, 1)
+
+
+	2. P(G5=2 | G1=0.5,G2=1,G3=0,G4=-1) = P(G5, G1, G2, G3, G4) / P(G1, G2, G3, G4)
+										= P(G5, G1, G2, G3, G4) / P(G1 | G2, G3, G4)P(G2, G3, G4)
+										= P(G5, ..., G1) / P(G1)P(G2, G3, G4)P(G2, G3, G4)
+										= P(G5, ..., G1) / P(G1)P(G2 | G3, G4)P(G3, G4)P(G2, G3, G4)
+										= P(G5,...,G1) / P(G1)P(G2)P(G3, G4)

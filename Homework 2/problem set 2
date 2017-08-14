@@ -1,0 +1,97 @@
+Exercise #2
+
+Linear model cross validation scores - [ 0.67816092,  0.64597701,  0.67126437,  0.65057471,  0.68275862]
+Mean score: 0.66574712643678158
+
+Degree 3 kernel cross validation scores - [ 0.71494253,  0.68045977,  0.72183908,  0.73103448,  0.71264368]
+Mean score: 0.71218390804597698
+
+Degree 4 kernel cross validation scores - [ 0.59310345,  0.65977011,  0.5954023 ,  0.62528736,  0.70804598]
+Mean score: 0.63632183908045969
+
+Degree 6 kernel cross validation scores - [ 0.49885057,  0.51724138,  0.50804598,  0.50804598,  0.52413793]
+Mean score: 0.51126436781609197
+
+RBF/Gaussian kernel cross validation scores -[ 0.75862069,  0.69425287,  0.74022989,  0.72413793,  0.77931034]
+Mean score: 0.73931034482758617
+
+As the degree of the chosen kernel increases, the SVM performs worse on cross-validation because a higher degree means that the model will overfit and become overly complex to fit exactly to the training data. This is evident because among the polynomial kernels chosen, the degree 3 had the best average performance.  
+
+Using the gaussian kernel SVM, it has a precision of 0.7598425196850394 and a recall of 0.7310606060606061 and an accuracy on the test set of 0.736
+
+
+
+
+Exercise #3
+
+Explained variance ratio for 10 PCs:
+[ 0.25057109  0.1420688   0.09699589  0.07514963  0.04743045  0.03678529  0.03076325  0.01996028  0.01697974  0.01488106]
+
+
+Pairwise Pearson values for age with top 10 PCs:
+(0.41445102385184401, 0.00026703580584441777) - Y 1
+(-0.26135439779742786, 0.025519597269362187)  - Y 2
+(-0.039001155863676459, 0.74321466125884172)  - N
+(-0.19430254617781711, 0.099515285634981923)  - N
+(-0.057042519289218961, 0.63168952746150975)  - N
+(-0.12334638987443032, 0.29849840506094705)   - N
+(-0.16202867190838741, 0.17082790107021453)   - Y 3
+(0.4295049783386623, 0.0001494886107672933)   - N
+(-0.097079810118929397, 0.4138903834159039)   - N
+(-0.013826875037538057, 0.90757061488758239)  - N
+
+
+Pairwise Pearson values for post-mortem interval with top 10 PCs:
+(-0.31373867999132948, 0.0068731458163511904) - Y  
+(0.093903529452189022, 0.42940357001808349)   - N
+(-0.072078110424255437, 0.54451776607342328)  - N
+(0.048572610520632796, 0.68321296541338705)   - N
+(-0.021852453535195892, 0.85440038998915435)  - N
+(0.081042106924904503, 0.49549483582737797)   - N
+(0.23796974507448435, 0.042627011252057673)   - Y
+(-0.39938427464701348, 0.0004647144884276774) - Y 4
+(-0.031606456640187797, 0.79066200606080328)  - N
+(-0.12768282070535591, 0.28170063141960472)   - N
+
+
+Pairwise Pearson values for rna integrity number with top 10 PCs:
+(-0.40541699202839931, 0.00037342153138984974) - Y
+(0.12251281868521785, 0.3018008359641276)      - N
+(0.23210970491782837, 0.048155500727005564)    - Y 5
+(-0.088786223803815942, 0.45507941729332479)   - N
+(0.07913772079611904, 0.50571305111473852)     - N
+(0.15882432327604681, 0.17956011587944853)     - N
+(-0.15184075867469016, 0.19970703873837817)    - N
+(0.23830980694614234, 0.042323027653518357)    - Y
+(0.018419217702909444, 0.87708092066774657)    - N
+(0.010232004468033523, 0.93153349563141019)    - N
+
+At least 5 of the PCs are strongly correlated with at least one covariate.
+
+Pairwise Pearson values for age with phenotype:
+(0.30593926584474912, 0.0084816540690638084)   - Y
+
+
+Pairwise Pearson values for post-mortem interval with phenotype:
+(-0.16247798734622823, 0.16962879471004097)    - N
+
+
+Pairwise Pearson values for rna integrity number with phenotype:
+(-0.4594037661503122, 4.3433640851687136e-05)  - Y
+
+From the given pairwise Pearson values, it would seem that disease status is confounded with RNA integrity number, but not post-mortem interval.
+
+The disease may be confounded with RNA integrity number but most definitely not post-mortem interval. It is not possible to tell from simply the principal components since correlation does not necessarily mean causation. If we could tell disease status simply from the principal components, then we would be able to differentiate solely based on RNA integrity numbers and the variance ratios of the two PCAs. However, we cannot completely distinguish between diseased and healthy based on RNA integrity number. 
+
+Significant Genes at p < 0.05: 8493
+
+Significant Genes after Benjamini Hochberg Correction: 6938
+
+Exercise #4
+
+Cluster sizes = [193, 430, 688, 324, 181]
+A k-means model with k clusters has k * d free parameters
+
+Choose k = 6
+BIC values: 
+[162305.77464085186, 78937.837882456311, 80992.051168330872, 80813.509995936955, 35347.057784773169, 60018.177057170884, 60551.217906929654, 61080.751143011839, 61700.35071524122]

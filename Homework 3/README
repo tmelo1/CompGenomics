@@ -1,0 +1,8 @@
+Okay so, it's been a rough time. Yeah. Sorry. 
+
+
+Exercise 1:
+	The first two plots exhibit about 2 separate population clusters each but YRI seems to exhibit little population structure overall.
+
+Exercise 2:
+	The signs of the entries of the inverse covariance matrix tells us about how closely related the two genes are and what kind of relationship they have. A negative sign in the covariance matrix tells us that as the expression of the in question increases, there is a negative correlative relationship, so expression of the other gene will decrease. The magnitude of the precision matrix tells us how significant the relationship between two genes is, so a smaller magnitude of the precision matrix entry means there is a weak relationship.
